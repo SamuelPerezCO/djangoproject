@@ -6,4 +6,4 @@ def hello(request):
     return HttpResponse("<h1>Hello World</h1>")
 
 def about(request):
-    return HttpResponse('About')
+    return HttpResponse('<h2>About</h2>')
