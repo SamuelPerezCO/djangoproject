@@ -1,18 +1,22 @@
-<h1>Tasks</h1>
+{% extends 'layouts/base.html' %}
 
-{% for task in tasks %}
+{% block content %}
+    <h1>Tasks</h1>
 
-<div>
-    <h1>{% if task.done == False%} ⏰ {% else %} ✅ {% endif %}{{task.title}}</h1>
+    {% for task in tasks %}
 
-    <p>{{task.description}}</p>
-    <p>Project: {{task.project}}</p>
-    <button>
-        Delete
-    </button>
-    <button>
-        ✅ Done
-    </button>
-</div>
+    <div>
+        <h1>{% if task.done == False%} ⏰ {% else %} ✅ {% endif %}{{task.title}}</h1>
 
-{% endfor %}
+        <p>{{task.description}}</p>
+        <p>Project: {{task.project}}</p>
+        <button>
+            Delete
+        </button>
+        <button>
+            ✅ Done
+        </button>
+    </div>
+
+    {% endfor %}
+{% endblock %}
